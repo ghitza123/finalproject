@@ -60,6 +60,21 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>6.4.1</version>
+				<configuration>
+					<defaultSchema>auction</defaultSchema>
+					<schemas>
+						<schema>auction</schema>
+					</schemas>
+					<url>jdbc:mysql://localhost:3306?serverTimezone=UTC</url>
+					<user>root</user>
+					<password>root</password>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
