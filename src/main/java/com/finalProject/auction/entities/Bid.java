@@ -11,6 +11,21 @@ public class Bid {
     private int bidId;
 
     @Column(name = "bidValue")
-    private String title;
+    private int bidValue;
 
+    @ManyToOne
+    @JoinColumn(name = "auctionId")
+    private Auction biddedAuction;
+
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User userWithTheBid;
+
+
+    public Bid() {
+    }
+
+    public Bid(int value) {
+        this.bidValue = value;
+    }
 }
